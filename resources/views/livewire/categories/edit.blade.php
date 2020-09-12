@@ -5,7 +5,7 @@
     <x-slot name="content">
         <form wire:submit.prevent="update">
             <x-jet-label value="Name"/>
-            <x-jet-input wire:model.lazy="category.name" class="w-full"/>
+            <x-jet-input wire:model.defer="category.name" class="w-full"/>
             <x-jet-input-error for="category.name"/>
         </form>
     </x-slot>

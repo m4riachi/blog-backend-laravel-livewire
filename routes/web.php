@@ -25,4 +25,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/categories', function () {
         return view('categories');
     })->name('categories');
+
+    Route::get('/posts', function () {
+        return view('posts');
+    })->name('posts');
+
+    Route::get('/preview/{post}', function (Illuminate\Http\Request $request, App\Models\Post $post) {
+        return view('preview', [
+            'post' => $post
+        ]);
+    })->name('preview');
 });
