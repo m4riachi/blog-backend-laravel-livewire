@@ -33,7 +33,11 @@
                     <td class="border px-4 py-2">{{ $item->name }}</td>
                     <td class="border px-4 py-2">{{ $item->title }}</td>
                     <td class="border px-4 py-2" align="center">
-                        <x-jet-button type="button" class="bg-yellow-400" wire:click="setMode('edit', {{$item->id}})">
+                        <a href="{{ route('preview', $item->id)}}" target="_blank" class="inline-flex items-center px-2 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 bg-yellow-400">
+                            <x-heroicon-o-eye width="26" />
+                        </a>
+
+                        <x-jet-button type="button" class="bg-blue-600" wire:click="setMode('edit', {{$item->id}})">
                             <x-heroicon-o-pencil-alt width="26" />
                         </x-jet-button>
 
